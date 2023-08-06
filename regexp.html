@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        {
+            // create regexp
+            const regex1 = /pina/
+            const regex2 = new RegExp("pina")
+            const regex3 = new RegExp(/pina/)
+        }
+
+        {
+            // test regex
+            const name = "Pina Pikaruo Auswahlen"
+            const regex = new RegExp("Pikaruo")
+
+            const result = regex.exec(name)
+            console.info(result);
+
+            const test = regex.test(name)
+            console.info(test);
+            console.info("=============");
+        }
+
+        {
+            // regex modifier
+            const name = "pina lorem \nipsum, dolor\nPikaruo pina \nemperor kong ming"
+            const regex1 = /^pina/g
+            const regex2 = /pikaruo/ig
+
+            let result
+            while ((result = regex1.exec(name)) !== null) {
+                console.info(result);
+            }
+
+            while ((result = regex2.exec(name)) !== null) {
+                console.info(result);
+            }
+            console.info("=============");
+        }
+        {
+            // advance regex
+            const regex = /p[aiueo]/ig
+
+            const name = "pina pikaruo pikarui kong ming"
+            let result
+            while ((result = regex.exec(name)) !== null) {
+                console.info(result);
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

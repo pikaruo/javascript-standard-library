@@ -1,0 +1,12 @@
+{
+    "firstName": "Pina",
+    "lastName": "Auswahlen",
+    "address": {
+        "country": "Indonesia",
+        "city": "Midle java"
+    },
+    "hobbies": [
+        "Coding",
+        "Game"
+    ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const target = {
+            middleName: "auswahlen"
+        }
+
+        const handler = {
+            get: function (target, property) {
+                console.info(`Akses property : ${property}`);
+                return target[property]
+            },
+            set: function (target, property, value) {
+                console.info(`Change property ${property} : ${value}`);
+                target[property] = value
+                if (value === null) {
+                    target[property] = "Tidak boleh null"
+                } else {
+                    target[property] = value
+                }
+            }
+        }
+
+        const proxy = new Proxy(target, handler)
+        proxy.fristName = "Pina"
+        proxy.lastName = "Pikaruo"
+
+        console.info(proxy.fristName);
+        console.info(proxy.middleName);
+        console.info(proxy.lastName);
+        console.info(target);
+
+    </script>
+</body>
+
+</html>
